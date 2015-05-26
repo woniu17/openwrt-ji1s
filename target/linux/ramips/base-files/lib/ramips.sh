@@ -391,6 +391,9 @@ ramips_board_detect() {
 	*"ZTE Q7")
 		name="zte-q7"
 		;;
+	*"HC5661 MIPS Ralink MT7620A")
+		name="HC5661"
+		;;
 	*"Lenovo Y1")
 		name="y1"
 		;;

@@ -230,6 +230,7 @@ ramips_setup_interfaces()
 		ucidef_add_switch_vlan "switch0" "2" "4 6t"
 		;;
 
+	HC5661 |\
 	y1s)
 		ucidef_set_interfaces_lan_wan "eth0.1" "eth0.2"
 		ucidef_add_switch "switch0" "1" "1"
@@ -317,6 +318,7 @@ ramips_setup_macs()
 	dir-320-b1 | \
 	psr-680w |\
 	sl-r7205 |\
+	HC5661 |\
 	y1 |\
 	y1s)
 		lan_mac=$(cat /sys/class/net/eth0/address)

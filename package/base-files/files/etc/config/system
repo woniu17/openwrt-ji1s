@@ -1,11 +1,34 @@
 config system
-	option hostname	OpenWrt
-	option timezone	UTC
+	option hostname 'HiWiFi'
+	option timezone 'CST-8'
+	option zonename 'Asia/Shanghai'
 
-config timeserver ntp
-	list server	0.openwrt.pool.ntp.org
-	list server	1.openwrt.pool.ntp.org
-	list server	2.openwrt.pool.ntp.org
-	list server	3.openwrt.pool.ntp.org
-	option enabled 1
-	option enable_server 0
+config timeserver 'ntp'
+	list server '0.openwrt.pool.ntp.org'
+	list server '1.openwrt.pool.ntp.org'
+	list server '2.openwrt.pool.ntp.org'
+	list server '3.openwrt.pool.ntp.org'
+	option enabled '1'
+	option enable_server '0'
+
+config led
+	option name 'power'
+	option sysfs 'HC5661:blue:power'
+	option default '1'
+	option trigger 'none'
+
+config led
+	option default '0'
+	option name 'internet'
+	option sysfs 'HC5661:blue:internet'
+	option trigger 'netdev'
+	option dev 'eth0'
+	option mode 'link tx rx'
+
+config led
+	option default '0'
+	option name 'wifi'
+	option sysfs 'HC5661:blue:wifi'
+	option trigger 'netdev'
+	option dev 'wlan0'
+	option mode 'link tx rx'

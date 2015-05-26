@@ -239,6 +239,11 @@ case $board in
 	xiaomi-miwifi-mini)
 		ucidef_set_led_default "power" "power" "xiaomi:red:status" "1"
 		;;
+	HC5661)
+		ucidef_set_led_default "power" "power" "HC5661:blue:power" "1"
+		ucidef_set_led_netdev "internet" "internet" "HC5661:blue:internet" "eth0.2"
+		set_wifi_led "HC5661:blue:wifi"
+		;;
 	y1 |\
 	y1s)
 		ucidef_set_led_default "power" "power" "lenovo:blue:power" "1"
